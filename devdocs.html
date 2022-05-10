@@ -43,8 +43,6 @@
       .sidebar_nav .inner_wrapper {    
          padding: 15px;
          background: #f5f5f5;}
-
-
       h1#overview {margin: 0;}
 
       .inner_wrapper ul li {
@@ -259,57 +257,53 @@
    <div class="main_wrapper">
       <div class="sidebar_nav">
          <div class="inner_wrapper">
-         <ul>
-            <li>Supported SDKs</li>
-            
-            <li>JavaScript
-                  <ul>
-                     <li>Quick Start: Client-Side JavaScript</li>
-                     <li>Client-Side JS Authentication</li>
-                     <li>Client-Side JS Encryption</li>
-                     <li>Client-Side JS Decryption</li>
-                     <li>Client-Side JS Access Controls
-                  </ul>
-            </li>
-            
-            <li>Node.js
-               <ul>
-                  <li>Quick Start: Node.jsNode.js Authentication</li>
-                  <li>Node.js Encryption</li>
-                  <li>Node.js Decryption</li>
-                  <li>Node.js Access Controls</li>
-               </ul>
-            </li>
-            
-            <li>Python
-               <ul>
-                  <li>Quick Start: Python</li>
-                  <li>Python Authentication</li>
-                  <li>Python Encryption</li>
-                  <li>Python Decryption</li>
-                  <li>Python Access Controls</li>
-               </ul>
-            </li>
-
-            <li>C++
-               <ul>
-               <li>Quick Start: C++</li>
-               <li>C++ Authentication</li>
-               <li>C++ Encryption</li>
-               <li>C++ Decryption</li>
-               <li>C++ Access Controls</li>
-               </ul>
-            </li>
-
-            <li>Sample Apps</li>
-            <li>Architecture</li>
-            <li>Glossary</li>
-            <li>FAQs</li>
-            <li>Community</li>
-            <li>Code of Conduct</li>
-            <li>Responsible Disclosure</li>
-            <li>About Virtru</li>
-         </ul>
+            <ul>
+               <li>Supported SDKs</li>
+               <li><a href="#js_sdk_wrapper">JavaScript</a>
+           <ul>
+               <li><a href="#virtru-sdk-for-client-side-javascript">Quick Start: Client-Side JavaScript</a></li>
+               <li><a href="#authentication">Client-Side JS Authentication</a></li>
+               <li><a href="#encryption-basics">Client-Side JS Encryption</a></li>
+               <li><a href="#decrypt">Client-Side JS Decryption</a></li>
+               <li><a href="#access-control">Client-Side JS Access Controls</a></li>
+           </ul>
+           </li>
+               <li><a href="#nodejs_sdk_wrapper">Node.js</a>
+           <ul>
+               <li><a href="#quick-start-1">Quick Start: Node.js</a></li>
+               <li><a href="#authentication-1">Node.js Authentication</a></li>
+               <li><a href="#encrypt-1">Node.js Encryption</a></li>
+               <li><a href="#decrypt-1">Node.js Decryption</a></li>
+               <li><a href="#access-control-1">Node.js Access Controls</a></li>
+           </ul>
+           </li>
+               <li><a href="#python_sdk_wrapper">Python</a>
+           <ul>
+               <li><a href="#quick-start-2">Quick Start: Python</a></li>
+               <li><a href="#authentication-2">Python Authentication</a></li>
+               <li><a href="#encrypt-2">Python Encryption</a></li>
+               <li><a href="#decrypt-2">Python Decryption</a></li>
+               <li><a href="#access-control-2">Python Access Controls</a></li>
+           </ul>
+           </li>
+               <li><a href="#cplusplus_sdk_wrapper">C++</a>
+           <ul>
+            <li><a href="quick-start-3">Quick Start: C++</a></li>
+               <li> <a href="#authentication-3"> C++ Authentication</a></li>
+               <li><a href="#encrypt-4">C++ Encryption</a></li>
+               <li><a href="#decrypt-3">C++ Decryption</a></li>
+               <li><a href="#access-control-3">C++ Access Controls</a></li>
+           </ul>
+           </li>
+               <li>Sample Apps</li>
+               <li>Architecture</li>
+               <li>Glossary</li>
+               <li>FAQs</li>
+               <li>Community</li>
+               <li>Code of Conduct</li>
+               <li>Responsible Disclosure</li>
+               <li>About Virtru</li>
+           </ul>
       </div>
    </div>
    <div class="main_content">
@@ -317,6 +311,8 @@
      <h1 id="overview">Overview</h1>
       <h2 id="supported-sdks">Supported SDKs</h2>
       <p>Protect, track &amp; control data with the Virtru SDK in the following languages:</p>
+      </div>
+      <div id="js_sdk_wrapper" class="sdk_wrapper">
       <h3 id="virtru-sdk-for-client-side-javascript">Virtru SDK for Client-side JavaScript</h3>
       <blockquote>
       <p><a href="https://docs.developer.virtru.com/js/2.1.0/">JavaScript SDK Documentation</a></p>
@@ -330,9 +326,8 @@
       <h5 id="0-run-a-basic-server">0. Run a basic server</h5>
       <p>Because the Virtru JavaScript SDK respects <strong>strong security practices like CORS</strong>, you’ll need to run a basic web server for your first app. Running JavaScript in a local HTML file will not
       work.</p>
-</div>
 <!--- SNIPPET step-0/index.html --->
-<div id="js_sdk_wrapper" class="sdk_wrapper">
+
 <div class="sourceCode" id="cb1">
       <pre class="sourceCode html">
         <code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
@@ -598,6 +593,7 @@
   alt="Decrypting with Virtru Secure Reader" /></p>
   <p>Congrats Alice! <strong>Your sensitive data is safe wherever it
   goes</strong>.</p>
+  
   <h4 id="authentication">Authentication</h4>
   <p>Security starts with identity. You claim you’re Alice, but the Virtru
   SDK doesn’t know that. We can’t protect or access data without an
@@ -736,7 +732,7 @@
 <h2 id="encrypt">Encrypt</h2>
   <p>Now that the Virtru SDK knows you’re Alice, you can protect your
   first piece of data.</p>
-  <h5 id="encryption-basics">Encryption Basics</h5>
+  <h3 id="encryption-basics">Encryption Basics</h3>
   <p>Before calling encrypt, you need to specify a few simple
   parameters.</p>
   <p>You don’t need to include your email address when encrypting. You
@@ -1130,7 +1126,7 @@
   </pre>
 </div>
   
-<h4 id="decrypt">Decrypt</h4>
+<h3 id="decrypt">Decrypt</h3>
   <p>Well Alice, the good news is, your first encrypted file is so safe,
   only you can decrypt it. Let’s confirm that with your protected file.
   Then, we’ll grant access to someone you trust.</p>
@@ -1228,7 +1224,7 @@
   </pre>
 </div>
   
-<h4 id="access-control">Access Control</h4>
+<h3 id="access-control">Access Control</h3>
   <p>No one can predict the future. Access controls let you change your
   mind about who has access and under what conditions.</p>
   <h5 id="grant-access">Grant Access</h5>
@@ -1494,6 +1490,7 @@
     watermarking:
  </p>
  <!--- SNIPPET watermark-enable.js --->
+ 
  <div class="sourceCode" id="cb36">
     <pre class="sourceCode javascript">
       <code class="sourceCode javascript">
@@ -1529,6 +1526,8 @@
  </p>
  <p>To disable watermarking:</p>
  <!--- SNIPPET watermark-disable.js --->
+ 
+ 
  <div class="sourceCode" id="cb37">
     <pre class="sourceCode javascript">
       <code class="sourceCode javascript">
@@ -3354,7 +3353,7 @@
     </pre>
  </div>
  
- <p>####### Access Control</p>
+ <h3 id="access-control-2">Access Control</h3>
  <p>No one can predict the future. Access controls let you change your
     mind about who has access and under what conditions.
  </p>
@@ -4204,7 +4203,7 @@
  params.setPolicy(policy);
  
  client.encryptFile(params);</code></pre>
- <h4 id="access-control-2">Access Control</h4>
+ <h4 id="access-control-3">Access Control</h4>
  <p>No one can predict the future. Access controls let you change your
     mind about who has access and under what conditions.
  </p>
@@ -4843,6 +4842,7 @@
     threats in particular as surfaced by audit.
  </p>
  </div><!-- End Section wrapper-->
+
  <div class="section_wrapper">
  <h2 id="glossary">Glossary</h2>
  <h3 id="acm">ACM</h3>
@@ -5039,7 +5039,7 @@
  </div><!-- End section wrapper-->
 
  <!-- Other section which I am not sure has to be in that doc-->
- <div class="section_wrapper">
+
  <h2 id="community">Community</h2>
  <h2 id="contact-us">Contact Us</h2>
  <p>At Virtru, we believe security and privacy applications should be
@@ -5316,7 +5316,6 @@
        &amp; Host</a>
     </p>
  </blockquote>
-</div>
 </div>
    </div>
  </body>
