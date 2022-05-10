@@ -20,16 +20,38 @@
     }
     body {
       margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      max-width:1600px;
       hyphens: auto;
       overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
+
+    .main_wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+      max-width: 1500px;margin: auto;padding: 35px 0;}
+
+      .sidebar_nav {width: 25%;flex: 0 1 25%;}
+      .sidebar_nav .inner_wrapper ul ul {margin-top: 10px;}
+
+      .sidebar_nav .inner_wrapper>ul>li {font-weight: 800;}
+
+      .inner_wrapper ul ul li {font-weight: 400;}
+      .main_content {width: 75%;flex: 0 1 75%;padding: 0 25px 0;}
+      .sidebar_nav .inner_wrapper {    
+         padding: 15px;
+         background: #f5f5f5;}
+
+
+      h1#overview {margin: 0;}
+
+      .inner_wrapper ul li {
+         font-family: 'Open Sans', sans-serif;
+         font-size:16px;
+         margin-bottom:10px;
+}
     @media (max-width: 600px) {
       body {
         font-size: 0.9em;
@@ -37,6 +59,7 @@
       }
       h1 {
         font-size: 1.8em;
+        font-family: 'Raleway', sans-serif;
       }
     }
     @media print {
@@ -51,6 +74,7 @@
       }
       h2, h3, h4 {
         page-break-after: avoid;
+        font-family: 'Raleway', sans-serif;
       }
     }
     p {
@@ -67,6 +91,7 @@
     }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1.4em;
+      font-family: 'Raleway', sans-serif;
     }
     h5, h6 {
       font-size: 1em;
@@ -225,9 +250,71 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="intro_wrapper" class="intro_wrapper"><h1 id="overview">Overview</h1>
+
+   <div class="main_wrapper">
+      <div class="sidebar_nav">
+         <div class="inner_wrapper">
+         <ul>
+            <li>Supported SDKs</li>
+            
+            <li>JavaScript
+                  <ul>
+                     <li>Quick Start: Client-Side JavaScript</li>
+                     <li>Client-Side JS Authentication</li>
+                     <li>Client-Side JS Encryption</li>
+                     <li>Client-Side JS Decryption</li>
+                     <li>Client-Side JS Access Controls
+                  </ul>
+            </li>
+            
+            <li>Node.js
+               <ul>
+                  <li>Quick Start: Node.jsNode.js Authentication</li>
+                  <li>Node.js Encryption</li>
+                  <li>Node.js Decryption</li>
+                  <li>Node.js Access Controls</li>
+               </ul>
+            </li>
+            
+            <li>Python
+               <ul>
+                  <li>Quick Start: Python</li>
+                  <li>Python Authentication</li>
+                  <li>Python Encryption</li>
+                  <li>Python Decryption</li>
+                  <li>Python Access Controls</li>
+               </ul>
+            </li>
+
+            <li>C++
+               <ul>
+               <li>Quick Start: C++</li>
+               <li>C++ Authentication</li>
+               <li>C++ Encryption</li>
+               <li>C++ Decryption</li>
+               <li>C++ Access Controls</li>
+               </ul>
+            </li>
+
+            <li>Sample Apps</li>
+            <li>Architecture</li>
+            <li>Glossary</li>
+            <li>FAQs</li>
+            <li>Community</li>
+            <li>Code of Conduct</li>
+            <li>Responsible Disclosure</li>
+            <li>About Virtru</li>
+         </ul>
+      </div>
+   </div>
+   <div class="main_content">
+  <div id="intro_wrapper" class="intro_wrapper">
+     <h1 id="overview">Overview</h1>
       <h2 id="supported-sdks">Supported SDKs</h2>
       <p>Protect, track &amp; control data with the Virtru SDK in the following languages:</p>
       <h3 id="virtru-sdk-for-client-side-javascript">Virtru SDK for Client-side JavaScript</h3>
@@ -2642,6 +2729,7 @@
  </div>
  <!-- End Nodejs sdk wrapper-->
  <!--Python SDK-->
+ <div id="python_sdk_wrapper" class="sdk_wrapper">
  <h3 id="virtru-sdk-for-python">Virtru SDK for Python</h3>
  <blockquote>
     <p><a href="https://docs.developer.virtru.com/python/2.1.1/">Python SDK
@@ -3527,7 +3615,9 @@
  </code>
  </pre>
  </div>
+ </div> <!-- end Python SDK Wrapper-->
  <!--C++ SDK-->
+ <div id="js_sdk_wrapper" class="sdk_wrapper">
  <h3 id="virtru-sdk-for-c">Virtru SDK for C++</h3>
  <blockquote>
     <p><a href="https://docs.developer.virtru.com/cpp/2.1.1/">C++ SDK
@@ -4327,6 +4417,8 @@
  policy.disableWatermarking();
  
  client.updatePolicyForFile(policy, &quot;sensitive.docx.tdf.html&quot;);</code></pre>
+ </div><!-- End C++ SDK wrapper-->
+ 
  <h2 id="sample-apps">Sample Apps</h2>
  <p>We have built a few sample applications to get you up and running
     quickly. You may use these as starter projects, or look at their source
@@ -4459,7 +4551,8 @@
         </code>
     </pre>
  </div>
- 
+ <!-- architecture wrapper start-->
+ <div class="section_wrapper">
  <h2 id="architecture">Architecture</h2>
  <h3 id="virtru-data-protection-platform">Virtru Data Protection
     Platform
@@ -4749,6 +4842,8 @@
     policy over time in sync with changing needs or based on observed
     threats in particular as surfaced by audit.
  </p>
+ </div><!-- End Section wrapper-->
+ <div class="section_wrapper">
  <h2 id="glossary">Glossary</h2>
  <h3 id="acm">ACM</h3>
  <p>See “Access Control Manager.”</p>
@@ -4831,6 +4926,9 @@
  <p>A web-based Virtru product that allows users to authenticate,
     decrypt, and view protected data.
  </p>
+ </div><!-- End Section Wrapper-->
+ <!-- Start Section Wrapper-->
+ <div class="section_wrapper">
  <h2 id="faqs">FAQs</h2>
  <h3 id="how-to-open-a-tdf">How to Open a TDF</h3>
  <p>Let's say someone you added to the policy got a <code>.html</code> or
@@ -4938,7 +5036,11 @@
        need help getting your domain enabled with the Virtru SDK.
     </p>
  </blockquote>
- <h1 id="community">Community</h1>
+ </div><!-- End section wrapper-->
+
+ <!-- Other section which I am not sure has to be in that doc-->
+ <div class="section_wrapper">
+ <h2 id="community">Community</h2>
  <h2 id="contact-us">Contact Us</h2>
  <p>At Virtru, we believe security and privacy applications should be
     community driven.
@@ -5214,7 +5316,8 @@
        &amp; Host</a>
     </p>
  </blockquote>
-
-
+</div>
+</div>
+   </div>
  </body>
  </html>
