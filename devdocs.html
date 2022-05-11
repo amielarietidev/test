@@ -10,10 +10,10 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>README</title>
+
   <style>
     html {
       line-height: 1.5;
-      font-family: Georgia, serif;
       font-size: 20px;
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -25,6 +25,7 @@
       overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
+      font-family: 'Open Sans', sans-serif;
     }
 
     .main_wrapper {
@@ -34,21 +35,40 @@
       max-width: 1500px;margin: auto;padding: 35px 0;}
 
       .sidebar_nav {width: 25%;flex: 0 1 25%;}
-      .sidebar_nav .inner_wrapper ul ul {margin-top: 10px;}
+      .sidebar_nav .inner_wrapper ul>li>ul {margin-top: 10px; display:none;}
+      .sidebar_nav .inner_wrapper ul>li:target>ul {display:block!important;}
 
       .sidebar_nav .inner_wrapper>ul>li {font-weight: 800;}
 
-      .inner_wrapper ul ul li {font-weight: 400;}
+      .inner_wrapper ul ul li {
+         font-weight: 400;color: #777e8c;
+         list-style: none;}
       .main_content {width: 75%;flex: 0 1 75%;padding: 0 25px 0;}
       .sidebar_nav .inner_wrapper {    
          padding: 15px;
-         background: #f5f5f5;}
+         background: #f5f5f5;
+         position:relative;
+   }
+
+   .sidebar_nav .inner_wrapper.sticky {    
+         position:fixed;
+         top:0;
+         margin:30px 0 0;
+         max-width: 325px;
+         width: 100%;
+         box-sizing: border-box;
+   }
       h1#overview {margin: 0;}
 
       .inner_wrapper ul li {
          font-family: 'Open Sans', sans-serif;
-         font-size:16px;
+         font-size:15px;
          margin-bottom:10px;
+         list-style: none;
+}
+
+.inner_wrapper ul li a{
+         color:#777e8c!important;
 }
     @media (max-width: 600px) {
       body {
@@ -256,44 +276,48 @@
 
    <div class="main_wrapper">
       <div class="sidebar_nav">
-         <div class="inner_wrapper">
+         <div id="inner_wrapper" class="inner_wrapper">
             <ul>
                <li>Supported SDKs</li>
-               <li><a href="#js_sdk_wrapper">JavaScript</a>
-           <ul>
-               <li><a href="#virtru-sdk-for-client-side-javascript">Quick Start: Client-Side JavaScript</a></li>
-               <li><a href="#authentication">Client-Side JS Authentication</a></li>
-               <li><a href="#encryption-basics">Client-Side JS Encryption</a></li>
-               <li><a href="#decrypt">Client-Side JS Decryption</a></li>
-               <li><a href="#access-control">Client-Side JS Access Controls</a></li>
-           </ul>
+               <!-- <li><a href="#js_sdk_wrapper">JavaScript</a> -->
+                  <li id="a"><a href="#a">JavaScript</a>
+                     <ul>
+                           <li><a href="#virtru-sdk-for-client-side-javascript">Quick Start: Client-Side JavaScript</a></li>
+                           <li><a href="#authentication">Client-Side JS Authentication</a></li>
+                           <li><a href="#encryption-basics">Client-Side JS Encryption</a></li>
+                           <li><a href="#decrypt">Client-Side JS Decryption</a></li>
+                           <li><a href="#access-control">Client-Side JS Access Controls</a></li>
+                     </ul>
            </li>
-               <li><a href="#nodejs_sdk_wrapper">Node.js</a>
-           <ul>
-               <li><a href="#quick-start-1">Quick Start: Node.js</a></li>
-               <li><a href="#authentication-1">Node.js Authentication</a></li>
-               <li><a href="#encrypt-1">Node.js Encryption</a></li>
-               <li><a href="#decrypt-1">Node.js Decryption</a></li>
-               <li><a href="#access-control-1">Node.js Access Controls</a></li>
-           </ul>
+               <li id="b"><a href="#b">Node.js</a>
+                  <!-- <a href="#nodejs_sdk_wrapper">Node.js</a> -->
+                  <ul>
+                        <li><a href="#quick-start-1">Quick Start: Node.js</a></li>
+                        <li><a href="#authentication-1">Node.js Authentication</a></li>
+                        <li><a href="#encrypt-1">Node.js Encryption</a></li>
+                        <li><a href="#decrypt-1">Node.js Decryption</a></li>
+                        <li><a href="#access-control-1">Node.js Access Controls</a></li>
+                  </ul>
            </li>
-               <li><a href="#python_sdk_wrapper">Python</a>
-           <ul>
-               <li><a href="#quick-start-2">Quick Start: Python</a></li>
-               <li><a href="#authentication-2">Python Authentication</a></li>
-               <li><a href="#encrypt-2">Python Encryption</a></li>
-               <li><a href="#decrypt-2">Python Decryption</a></li>
-               <li><a href="#access-control-2">Python Access Controls</a></li>
-           </ul>
+               <li id="c"><a href="#c">Python</a>
+                  <!-- <a href="#python_sdk_wrapper">Python</a> -->
+                  <ul>
+                        <li><a href="#quick-start-2">Quick Start: Python</a></li>
+                        <li><a href="#authentication-2">Python Authentication</a></li>
+                        <li><a href="#encrypt-2">Python Encryption</a></li>
+                        <li><a href="#decrypt-2">Python Decryption</a></li>
+                        <li><a href="#access-control-2">Python Access Controls</a></li>
+                  </ul>
            </li>
-               <li><a href="#cplusplus_sdk_wrapper">C++</a>
-           <ul>
-            <li><a href="quick-start-3">Quick Start: C++</a></li>
-               <li> <a href="#authentication-3"> C++ Authentication</a></li>
-               <li><a href="#encrypt-4">C++ Encryption</a></li>
-               <li><a href="#decrypt-3">C++ Decryption</a></li>
-               <li><a href="#access-control-3">C++ Access Controls</a></li>
-           </ul>
+               <li id="d"><a href="#d">C++</a>
+                  <!-- <a href="#cplusplus_sdk_wrapper">C++</a> -->
+                  <ul>
+                     <li><a href="quick-start-3">Quick Start: C++</a></li>
+                        <li> <a href="#authentication-3"> C++ Authentication</a></li>
+                        <li><a href="#encrypt-4">C++ Encryption</a></li>
+                        <li><a href="#decrypt-3">C++ Decryption</a></li>
+                        <li><a href="#access-control-3">C++ Access Controls</a></li>
+                  </ul>
            </li>
                <li>Sample Apps</li>
                <li>Architecture</li>
@@ -584,12 +608,12 @@
   and render files. Or we could <strong>use Virtru’s Secure Reader</strong>, which is built to do exactly that for thousands of security-conscious users every day. In fact, if you open that HTML file from the last step, it will redirect you to Secure Reader.</p>
   <p>Secure Reader will ask you to authenticate. (You’re still Alice,
   aren’t you?)</p>
-  <p><img src=".screenshots/auth.png"
+  <p><img src="screenshots/auth.png"
   alt="Authenticating with Virtru Secure Reader" /></p>
   <p>And if you authenticate with the same email address you used to
   create the HTML file, you should be able to view it in Secure
   Reader:</p>
-  <p><img src=".screenshots/decrypt.png"
+  <p><img src="screenshots/decrypt.png"
   alt="Decrypting with Virtru Secure Reader" /></p>
   <p>Congrats Alice! <strong>Your sensitive data is safe wherever it
   goes</strong>.</p>
@@ -1134,13 +1158,13 @@
   Reader, the easiest way to decrypt</h5>
   <p>Opening a protected HTML file will take you to Virtru’s Secure
   Reader.</p>
-  <p><img src=".screenshots/auth.png"
+  <p><img src="screenshots/auth.png"
   alt="Authenticating with Virtru Secure Reader" /></p>
   <p>Secure Reader will also ask you to authenticate. Again, no one trusts
   that you’re Alice. But trust us, it’s good for security. If Mallory
   tries to authenticate, he won’t see your sensitive data.</p>
   <p>But if you authenticate, Secure Reader will render your file.</p>
-  <p><img src=".screenshots/decrypt.png"
+  <p><img src="screenshots/decrypt.png"
   alt="Decrypting with Virtru Secure Reader" /></p>
   <p>If Secure Reader can’t render the file, you will still be able to
   download it.</p>
@@ -1772,13 +1796,13 @@
     <p>Secure Reader will ask you to authenticate. (You’re still Alice,
        aren’t you?)
     </p>
-    <p><img src=".screenshots/auth.png"
+    <p><img src="screenshots/auth.png"
        alt="Authenticating with Virtru Secure Reader" /></p>
     <p>And if you authenticate with the same email address you used to
        create the HTML file, you should be able to view it in Secure
        Reader:
     </p>
-    <p><img src=".screenshots/decrypt.png"
+    <p><img src="screenshots/decrypt.png"
        alt="Decrypting with Virtru Secure Reader" /></p>
     <p>Congrats Alice! <strong>Your sensitive data is safe wherever it
        goes</strong>.
@@ -2028,7 +2052,7 @@
     <p>That one little encrypt call did a lot of work behind the scenes to
        keep your sensitive data safe:
     </p>
-    <p><img src=".screenshots/lifecycle.png"
+    <p><img src="screenshots/lifecycle.png"
        alt="Protecting a file and sending the policy and key materials to Virtru" /></p>
     <ul>
        <li>
@@ -2169,14 +2193,14 @@
     <p>Opening a protected HTML file will take you to Virtru’s Secure
        Reader.
     </p>
-    <p><img src=".screenshots/auth.png"
+    <p><img src="screenshots/auth.png"
        alt="Authenticating with Virtru Secure Reader" /></p>
     <p>Secure Reader will also ask you to authenticate. Again, no one trusts
        that you’re Alice. But trust us, it’s good for security. If Mallory
        tries to authenticate, he won’t see your sensitive data.
     </p>
     <p>But if you authenticate, Secure Reader will render your file.</p>
-    <p><img src=".screenshots/decrypt.png"
+    <p><img src="screenshots/decrypt.png"
        alt="Decrypting with Virtru Secure Reader" /></p>
     <p>If Secure Reader can’t render the file, you will still be able to
        download it.
@@ -2922,13 +2946,13 @@
  <p>Secure Reader will ask you to authenticate. (You’re still Alice,
     aren’t you?)
  </p>
- <p><img src=".screenshots/auth.png"
+ <p><img src="screenshots/auth.png"
     alt="Authenticating with Virtru Secure Reader" /></p>
  <p>And if you authenticate with the same email address you used to
     create the HTML file, you should be able to view it in Secure
     Reader:
  </p>
- <p><img src=".screenshots/decrypt.png"
+ <p><img src="screenshots/decrypt.png"
     alt="Decrypting with Virtru Secure Reader" /></p>
  <p>Congrats Alice! <strong>Your sensitive data is safe wherever it
     goes</strong>.
@@ -3135,7 +3159,7 @@
  <p>That one little encrypt call did a lot of work behind the scenes to
     keep your sensitive data safe:
  </p>
- <p><img src=".screenshots/lifecycle.png"
+ <p><img src="screenshots/lifecycle.png"
     alt="Protecting a file and sending the policy and key materials to Virtru" /></p>
  <ul>
     <li>
@@ -3271,14 +3295,14 @@
  <p>Opening a protected HTML file will take you to Virtru’s Secure
     Reader.
  </p>
- <p><img src=".screenshots/auth.png"
+ <p><img src="screenshots/auth.png"
     alt="Authenticating with Virtru Secure Reader" /></p>
  <p>Secure Reader will also ask you to authenticate. Again, no one trusts
     that you’re Alice. But trust us, it’s good for security. If Mallory
     tries to authenticate, he won’t see your sensitive data.
  </p>
  <p>But if you authenticate, Secure Reader will render your file.</p>
- <p><img src=".screenshots/decrypt.png"
+ <p><img src="screenshots/decrypt.png"
     alt="Decrypting with Virtru Secure Reader" /></p>
  <p>If Secure Reader can’t render the file, you will still be able to
     download it.
@@ -3833,13 +3857,13 @@
  <p>Secure Reader will ask you to authenticate. (You’re still Alice,
     aren’t you?)
  </p>
- <p><img src=".screenshots/auth.png"
+ <p><img src="screenshots/auth.png"
     alt="Authenticating with Virtru Secure Reader" /></p>
  <p>And if you authenticate with the same email address you used to
     create the HTML file, you should be able to view it in Secure
     Reader:
  </p>
- <p><img src=".screenshots/decrypt.png"
+ <p><img src="screenshots/decrypt.png"
     alt="Decrypting with Virtru Secure Reader" /></p>
  <p>Congrats Alice! <strong>Your sensitive data is safe wherever it
     goes</strong>.
@@ -4018,7 +4042,7 @@
  <p>That one little encrypt call did a lot of work behind the scenes to
     keep your sensitive data safe:
  </p>
- <p><img src=".screenshots/lifecycle.png"
+ <p><img src="screenshots/lifecycle.png"
     alt="Protecting a file and sending the policy and key materials to Virtru" /></p>
  <ul>
     <li>
@@ -4139,14 +4163,14 @@
  <p>Opening a protected HTML file will take you to Virtru’s Secure
     Reader.
  </p>
- <p><img src=".screenshots/auth.png"
+ <p><img src="screenshots/auth.png"
     alt="Authenticating with Virtru Secure Reader" /></p>
  <p>Secure Reader will also ask you to authenticate. Again, no one trusts
     that you’re Alice. But trust us, it’s good for security. If Mallory
     tries to authenticate, he won’t see your sensitive data.
  </p>
  <p>But if you authenticate, Secure Reader will render your file.</p>
- <p><img src=".screenshots/decrypt.png"
+ <p><img src="screenshots/decrypt.png"
     alt="Decrypting with Virtru Secure Reader" /></p>
  <p>If Secure Reader can’t render the file, you will still be able to
     download it.
@@ -4563,7 +4587,7 @@
     IoT or ML projects, sensitive data can be encrypted and protected even
     when disseminated into untrusted environments.
  </p>
- <p><img src=".screenshots/howitworks.png"
+ <p><img src="screenshots/howitworks.png"
     alt="Virtru Platform Workflow. The Virtru Key Management services maintain key data and control access. Your App, the Client, stores per object keys and their access policys with it. Alice, here representing either a user or automated system, can use your application to take plaintext payloads, and use the Virtru SDK to produce TDF Ciphertext Objects that are held by the user with an access policy the user or the service can author. These can also be shared to the customer directly or with untrusted third party datastores. Bob may then use another app, or the same app, can then request those keys and policies from the Virtr key management service, and use it to decrypt the TDF ciphertext objects with the virtru SDK to extract the original plain text." /></p>
  <h3 id="creating-tdfs-with-the-virtru-sdk">Creating TDFs with the Virtru
     SDK
@@ -4623,7 +4647,7 @@
     Data Format (TDF) combine to help you customize security and privacy
     into your applications.
  </p>
- <p><img src=".screenshots/devplatform.png"
+ <p><img src="screenshots/devplatform.png"
     alt="Virtru SDKs provide an application interface on top of our Digital Policy Management framework, which allows a service to set, enforce and report on enterprise policies and rules. The Management Dashboard is the front end to that service. This builds on top of three key blocks: Identity Federation, Key Access Server (KAS), and the Entity Attribute Server (EAS), which are building blocks of the Virtru Key Management Infrastructure. These all build on the Trusted Data Format (TDF), an Open Standard for Self-Protecting Data." /></p>
  <h4 id="the-trusted-data-format">The Trusted Data Format</h4>
  <p>As mentioned above, TDF provides the foundation for the entire Virtru
@@ -4733,7 +4757,7 @@
     applications, but also as it travels across the range of platforms and
     services, including cloud-based apps and external partners.
  </p>
- <p><img src=".screenshots/datacentricsecurity.png"
+ <p><img src="screenshots/datacentricsecurity.png"
     alt="Corporate Sanction Applications can use data in TDF form. This allows data to remain protected whereever it is shared; object-level protections enable persistent access control and monitoring. Thus they can flow out of the application to dropbox, then through services to other users, or through slack, email with exhange, or document services such as Office 365." /></p>
  <blockquote>
     <p>Data in and out of an organization</p>
@@ -4988,7 +5012,7 @@
        <p>Copy the AppId displayed.</p>
     </li>
  </ol>
- <p><img src=".screenshots/appidadmin.png"
+ <p><img src="screenshots/appidadmin.png"
     alt="Screen shot of the Developer Settings tab within the Virtru Organization Administion Dashboard" /></p>
  <blockquote>
     <p><em>How to disable your AppID?</em> Simply toggle the Developer Mode
@@ -5027,7 +5051,7 @@
        </p>
     </li>
  </ol>
- <p><img src=".screenshots/devallow.png"
+ <p><img src="screenshots/devallow.png"
     alt="Screen shot of the Settings page within the Virtru Organization Administion Dashboard" /></p>
  <blockquote>
     <p>Problems onboarding your domain? Please reach out to <a
@@ -5237,7 +5261,7 @@
     can reap the benefits of protecting against unauthorized data access
     while fostering data sharing and collaboration.
  </p>
- <p><img src=".screenshots/intersection.png"
+ <p><img src="screenshots/intersection.png"
     alt="Virtru: at the intersection of Privacy and Security" /></p>
  <p>Data protection strategies traditionally focus on locking down data,
     which comes at a significant cost; organizations fail to reap the
@@ -5318,5 +5342,25 @@
  </blockquote>
 </div>
    </div>
+   <script>
+      var left = document.getElementById("inner_wrapper");
+      var stop = (left.offsetTop - 30);
+      
+      window.onscroll = function (e) {
+          var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+          console.log(scrollTop, left.offsetTop);
+          // left.offsetTop;
+      
+          if (scrollTop >= stop) {
+              left.classList.add('sticky');
+          } else if (scrollTop < stop) {
+            left.classList.remove('sticky');
+          }
+          else {
+            left.classList.remove('sticky');
+          }
+          
+      }
+        </script>
  </body>
  </html>
